@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import CreateAshop from "../components/shops/CreateAShop";
 import AllShops from "../pages/shops/AllShops";
 import MyShops from "../pages/shops/MyShops";
+import NewShop from "../pages/shops/NewShop";
+import UpdateShop from "../pages/shops/UpdateShop";
 import ProtectedRoute from "./ProtectedRoute";
 
 const UserRouter = () => {
@@ -13,7 +14,7 @@ const UserRouter = () => {
           path="/create-shop"
           element={
             <ProtectedRoute>
-              <CreateAshop />
+              <NewShop />
             </ProtectedRoute>
           }
         ></Route>
@@ -22,6 +23,14 @@ const UserRouter = () => {
           element={
             <ProtectedRoute>
               <MyShops />
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
+          path="/shops/:id"
+          element={
+            <ProtectedRoute>
+              <UpdateShop />
             </ProtectedRoute>
           }
         ></Route>

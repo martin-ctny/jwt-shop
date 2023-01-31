@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import UpdateUserPassword from "../components/user/informations/UpdateUserPassword";
+
+import ChangePassword from "../pages/user/ChangePassword";
 import Account from "../pages/user/Account";
 import ProtectedRoute from "./ProtectedRoute";
 
@@ -19,7 +20,7 @@ const UserRouter = () => {
           path="/account/change-password"
           element={
             <ProtectedRoute>
-              <UpdateUserPassword />
+              <ChangePassword />
             </ProtectedRoute>
           }
         />

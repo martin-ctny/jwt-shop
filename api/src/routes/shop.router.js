@@ -5,5 +5,9 @@ const router = express.Router();
 
 router.post("/shops", TokenMiddleware, ShopController.create);
 router.get("/shops", ShopController.getAll);
+router.get("/shops/user", TokenMiddleware, ShopController.getAllShopsFromUser);
+router.get("/shops/:id", TokenMiddleware, ShopController.getOne);
+router.put("/shops/:id", TokenMiddleware, ShopController.update);
+router.delete("/shops/:id", TokenMiddleware, ShopController.delete);
 
 module.exports = router;

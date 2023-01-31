@@ -6,6 +6,11 @@ const UserController = {
   update: async (req, res) => {
     const { firstName, lastName, password, email } = req.body;
 
+    const user = await User.findById(req.user._id);
+
+    let FirstName = firstName || user.firstName;
+    let LastName = lastName || user.lastName;
+
     if (email !== req.user.email) {
       return res.status(400).send({ error: "Email ne peut pas être modifié" });
     }
@@ -19,11 +24,12 @@ const UserController = {
     }
 
     try {
+      console.log(FirstName, LastName);
       const user = await User.findByIdAndUpdate(
         req.user._id,
         {
-          firstName,
-          lastName,
+          firstName: FirstName,
+          lastName: LastName,
         },
         {
           new: true,

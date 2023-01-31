@@ -5,7 +5,6 @@ const GetAllShops = () => {
   const [shops, setShops] = useState([]);
 
   useEffect(() => {
-    console.log("oui");
     fetchShops();
   }, []);
 
@@ -25,7 +24,7 @@ const GetAllShops = () => {
         <div key={shop.id}>
           <img src={shop.image} alt={shop.name} />
           <h2>{shop.name}</h2>
-          <p>{shop.address}</p>
+          <p>{shop.adress}</p>
           <p>{shop.description}</p>
         </div>
       ))}

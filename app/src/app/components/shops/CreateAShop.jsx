@@ -1,8 +1,11 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../../../src/context/UserContext";
 import ShopsService from "../../../src/services/shops.service";
+import { useNavigate } from "react-router-dom";
 
 const CreateAshop = () => {
+  const navigate = useNavigate();
+
   const [shop, setShop] = useState({});
   const { user } = useContext(UserContext);
 
@@ -17,6 +20,7 @@ const CreateAshop = () => {
     console.log(shop);
     try {
       await ShopsService.createShop(shop);
+      navigate("/shops");
     } catch (error) {
       console.log(error);
     }

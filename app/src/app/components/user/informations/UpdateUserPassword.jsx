@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../../../src/context/UserContext";
 import UserService from "../../../../src/services/user.service";
 
 const UpdateUserPassword = () => {
+  const navigate = useNavigate();
+
   const [credentials, setCredentials] = useState({});
 
-  const { signout } = useContext(UserContext);
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
     console.log(credentials);
@@ -24,7 +24,6 @@ const UpdateUserPassword = () => {
       console.log(error);
     }
   };
-  const navigate = useNavigate();
   const handleClick = () => {
     navigate("/account");
   };

@@ -1,5 +1,7 @@
+import UpdateUserPassword from "../../components/user/informations/UpdateUserPassword";
+
 const ChangePassword = () => {
-  return <h1>jjjjjjj</h1>;
+  return <UpdateUserPassword />;
 };
 
 export default ChangePassword;
