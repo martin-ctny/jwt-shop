@@ -29,7 +29,7 @@ const GetSingleShop = () => {
       <h2>{shop.name}</h2>
       <p>{shop.adress}</p>
       <p>{shop.description}</p>
-      <button onClick={() => navigate(`/shops`)}>Exit</button>
+      <button onClick={() => navigate(`/all-shops`)}>Exit</button>
     </div>
   );
 };
