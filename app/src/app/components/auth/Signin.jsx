@@ -31,6 +31,9 @@ const Signin = () => {
   return (
     <form onSubmit={handleSubmit}>
       <UserAuthInputs handleChange={handleChange} />
+      <p onClick={() => navigate("/auth/forgot-password")}>
+        Mot de passe oublié
+      </p>
       <div>
         <input type="submit" value="Signin" />
       </div>

@@ -24,6 +24,10 @@ const userSchema = new Schema({
       ref: "Shop",
     },
   ],
+  resetToken: {
+    type: Schema.Types.ObjectId,
+    ref: "Token",
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);

@@ -34,7 +34,7 @@ const AllShopsFromUser = () => {
     <>
       {shops.map((shop) => (
         <div key={shop._id}>
-          <img src={shop.image} alt={shop.name} />
+          <img src={shop.logo} alt={shop.name} />
           <h2>{shop.name}</h2>
           <p>{shop.adress}</p>
           <p>{shop.description}</p>
